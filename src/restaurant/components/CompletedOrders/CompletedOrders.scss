@@ -1,0 +1,30 @@
+@import './../../public/scss/app';
+
+.completed-orders {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 34px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 430px;
+
+    .order {   
+
+      &__date {
+        text-align: center;
+        background-color: #e2eaf2;
+        font: {
+          size: 18px;
+          weight: 500;
+        }
+        color: #76818c;
+        padding-bottom: 12px;
+      }
+    }
+  }
+}

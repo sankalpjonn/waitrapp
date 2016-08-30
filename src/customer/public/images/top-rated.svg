@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="113px" height="26px" viewBox="0 0 113 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 14</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu_Categories_2.1" transform="translate(-111.000000, -1737.000000)">
+            <g id="Group-14" transform="translate(111.000000, 1737.000000)">
+                <polygon id="Rectangle-3-Copy" fill="#EC6565" points="0 0 113 0 106.467005 12.7279576 113 26 0 26"></polygon>
+                <text id="Top-Rated" font-family="Roboto-MediumItalic, Roboto" font-size="15" font-style="italic" font-weight="500" fill="#FFFFFF">
+                    <tspan x="17" y="18">Top Rated</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

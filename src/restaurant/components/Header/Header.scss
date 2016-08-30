@@ -1,0 +1,54 @@
+.header {
+  padding: 0 68px;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  align-items: center;
+  background-color: #ffffff;
+
+  &__logo {
+    font-size: 26px;
+    font-weight: normal;
+    text-align: center;
+    color: #414141;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  &__menu {
+    flex: 1;
+    text-align: center;
+
+    div {
+      display: inline-block;
+    }
+
+    &--active {
+      border-bottom: 4px solid #ed6666;
+    }
+
+    &__completed-orders,
+    &__live-orders {
+      font-size: 16px;
+      font-weight: 500;
+      color: #4c4c4c;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+  }
+
+  &__logout {
+    a {
+      color: #4c4c4c;
+      cursor: pointer;
+      font: {
+        size: 16px;
+        weight: normal;
+      };
+      text-decoration: none;
+    }
+  }
+
+}
