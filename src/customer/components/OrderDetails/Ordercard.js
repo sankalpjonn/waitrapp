@@ -131,9 +131,20 @@ export default class ordercard extends React.Component {
   render() {
     let subtotal = 0;
     let totalItemsQuantity = 0;
+    const customizations = [];
     const items = this.state.items.map((item, index) => {
       subtotal += +item.price * +item.quantity;
       totalItemsQuantity += +item.quantity;
+      if (item.itemCustomizations) {
+        const keys = Object.keys(item.itemCustomizations);
+        for (let i = 0; i < keys.length; i++) {
+          customizations.push(
+            <div className="label-customized">
+              <span>{item.itemCustomizations[keys[i]]}</span>
+            </div>
+          );
+        }
+      }
       return (
         <tr key={index}>
           <td className="name">
@@ -145,9 +156,7 @@ export default class ordercard extends React.Component {
             }
             {
               item.itemCustomizations ?
-                <div className="label-customized">
-                  <span>Customized</span>
-                </div> :
+                <span>{customizations}</span> :
                 undefined
             }
           </td>
