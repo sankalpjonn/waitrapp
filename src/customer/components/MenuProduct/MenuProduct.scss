@@ -35,15 +35,17 @@
           display: flex;
           flex-direction: column;
           flex: 1;
-          border-bottom: 0.5px solid #AFAFAF;
+          //border-bottom: 0.5px solid #AFAFAF;
           padding-bottom: 18px;
 
           &__ingredient {
-            color: #aaaaaa;
+            color: #908E8E;
             font: {
-              size: 11px;
+              size: 14px;
             }
             margin: 8px 0;
+            width: 70%;
+            float: left;
           }
 
           &__price {
@@ -52,6 +54,7 @@
               size: 13px;
               family: $font-family-rupee;
             }
+            float: right;
           }
 
           &__name {

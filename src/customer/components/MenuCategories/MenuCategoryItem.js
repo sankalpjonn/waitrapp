@@ -24,7 +24,16 @@ export default class MenuCategoryItem extends React.Component {
         )}
       >
         <div className="category-item__wrapper" onClick={this.onToggleClick}>
-          <span className="category-item__name">{this.props.category.name}</span>
+          <span
+            className="category-item__name"
+          >
+            <i
+              className="fa fa-circle fa-1x"
+              aria-hidden="true"
+            >
+            </i>
+            &nbsp; {this.props.category.name}
+          </span>
           <span
             className={classnames('chevron', { bottom: !this.props.category.expanded })}
           ></span>

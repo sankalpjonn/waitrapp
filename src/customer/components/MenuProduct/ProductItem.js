@@ -70,10 +70,12 @@ export default function ProductItem({ item, onCustomizeClick, quantity }) {
         <div className="menu-item__details__customisable">
           {customizable}
         </div>
-        <div className="menu-item__details__ingredient">
-          {item.description}
+        <div>
+          <div className="menu-item__details__ingredient">
+            {item.description}
+          </div>
+          <div className="menu-item__details__price">` {item.price}</div>
         </div>
-        <div className="menu-item__details__price">` {item.price}</div>
       </div>
     </div>
   );

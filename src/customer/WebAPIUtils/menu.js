@@ -1,3 +1,6 @@
+/*
+Access restaurant  menu from here
+ */
 import request from 'superagent';
 import { Config } from './../../config';
 import { listSuccess, listFailed } from './../actions/MenuActions';

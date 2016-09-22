@@ -23,7 +23,7 @@ export default class TableNoPopUp extends React.Component {
 
     saveOrderDetails({
       tableNumber: this.tableNumber.value,
-      comments: this.comments.value,
+      /* comments: this.comments.value, */
     });
     window.setTimeout(() => {
       this.context.router.push(`/restaurant/${RestaurantStore.getRestaurantID()}/orders`);
@@ -47,13 +47,15 @@ export default class TableNoPopUp extends React.Component {
               ref={ref => { this.tableNumber = ref; }}
             />
           </div>
-          <div className="form-group">
-            <label>Comments</label>
-            <textarea
-              placeholder="Ex. Less Spicy, Extra Mayoneese etc."
-              ref={ref => { this.comments = ref; }}
-            ></textarea>
-          </div>
+          {/*
+            <div className="form-group">
+              <label>Comments</label>
+              <textarea
+                placeholder="Ex. Less Spicy, Extra Mayoneese etc."
+                ref={ref => { this.comments = ref; }}
+              ></textarea>
+            </div>
+          */}
           <div className="table-no-pop-up__form__button">
             <button type="button" className="close" onClick={this.props.onClose}>Close</button>
             <button type="submit" className="confirm" onClick={this.onConfirmClick}>

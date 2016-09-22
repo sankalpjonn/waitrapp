@@ -34,7 +34,7 @@ export default class Rating extends React.Component {
               key={index}
               src={index < this.state.rating ? StarActive : Star}
               role="presentation"
-              width="14"
+              width="25"
               onClick={this.onStarClick(index)}
             />
           )
