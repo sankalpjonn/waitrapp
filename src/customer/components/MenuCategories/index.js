@@ -6,7 +6,7 @@ import Header from './../Header/';
 import { getItems } from './../../actions/MenuActions';
 import MenuStore from './../../stores/MenuStore';
 import RestaurantStore from './../../stores/RestaurantStore';
-// import CustomizeItemModal from './CustomizeItemModal';
+import CustomizeItemModal from './CustomizeItemModal';
 import './MenuCategories.scss';
 
 export default class MenuCategories extends React.Component {
@@ -101,7 +101,6 @@ export default class MenuCategories extends React.Component {
             )
           }
         </div>
-        {/*
           {
             this.state.selectedItem && this.state.selectedItem.customizations ?
             (
@@ -113,7 +112,6 @@ export default class MenuCategories extends React.Component {
             ) :
             undefined
           }
-      */}
         <PlaceOrderFooter />
       </div>
     );

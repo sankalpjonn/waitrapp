@@ -82,7 +82,7 @@ export default class CustomizeItemModal extends React.Component {
             <div className="modal-card__button">
               <button type="button" className="close" onClick={this.props.onClose}>Close</button>
               <button type="submit" className="confirm" onClick={this.onCustomizeConfirm}>
-                Confirm
+                Add
               </button>
             </div>
           </div>

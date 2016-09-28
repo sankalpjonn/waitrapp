@@ -151,9 +151,15 @@
         }
         color: #666560;
         border-top: 0.5px solid #AFAFAF;
+        display: flex;
+        flex-wrap: wrap;
 
         &:nth-child(2) {
           border: 0;
+        }
+
+        &:nth-child(){
+          width: 50%;
         }
 
 
