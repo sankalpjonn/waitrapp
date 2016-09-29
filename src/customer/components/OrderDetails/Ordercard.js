@@ -223,11 +223,14 @@ export default class ordercard extends React.Component {
                 <BillRequested mode={this.state.paymentMode} />
               ) :
               (
-                <OrderButtons
-                  paymentMode={this.state.paymentMode}
-                  onModeChange={this.onPaymentModeChange}
-                  onRequestBillClick={this.onRequestBillClick}
-                />
+                <div>
+                  <p className="order-card__req">Done with your meal?</p>
+                  <OrderButtons
+                    paymentMode={this.state.paymentMode}
+                    onModeChange={this.onPaymentModeChange}
+                    onRequestBillClick={this.onRequestBillClick}
+                  />
+                </div>
               )
             }
           </div>
