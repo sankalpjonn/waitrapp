@@ -32,7 +32,7 @@ export default function Live({ order }) {
                 <tr key={index}>
                   <td>{item.itemQuantity}</td>
                   <td>x</td>
-                  <td>{item.itemName}</td>
+                  <td>{item.itemName} &lpar; {item.itemCustomizations} &rpar;</td>
                 </tr>
               )
             }
