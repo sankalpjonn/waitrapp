@@ -35,8 +35,8 @@ export default function Live({ order }) {
                     <td>{item.itemName}</td>
                   </tr>
                   <tr className="order__body__items__customization">
-                    <td>{item.itemCustomizations['Stick Addon'].toString()},</td>
-                    <td>{item.itemCustomizations.comments.toString()}</td>
+                    {/* <td>{item.itemCustomizations['Stick Addon'].toString()},</td>
+                    <td>{item.itemCustomizations.comments.toString()}</td> */}
                   </tr>
                 </tbody>
               )
