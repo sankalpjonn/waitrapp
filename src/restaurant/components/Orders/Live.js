@@ -26,17 +26,22 @@ export default function Live({ order }) {
       </div>
       <div className="order__body">
         <table className="order__body__items">
-          <tbody>
             {
               order.orderData.map((item, index) =>
-                <tr key={index}>
-                  <td>{item.itemQuantity}</td>
-                  <td>x</td>
-                  <td>{item.itemName} &lpar; {item.itemCustomizations} &rpar;</td>
-                </tr>
+                <tbody>
+                  <tr key={index}>
+                    <td>{item.itemQuantity}</td>
+                    <td>x</td>
+                    <td>{item.itemName}</td>
+                  </tr>
+                  <tr className="order__body__items__customization">
+                    {/* <td>{item.itemCustomizations['Stick Addon'].toString()},</td>
+                    <td>{item.itemCustomizations.comments.toString()}</td> */}
+                  </tr>
+                </tbody>
               )
             }
-          </tbody>
+
         </table>
         {
           order.comments ?
