@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
-    "dev": "webpack-dev-server --progress --colors --content-base build/ --history-api-fallback --port 8888 --host 0.0.0.0"
+    "dev": "webpack-dev-server --progress --colors --content-base build/ --history-api-fallback --port 8888 --host 0.0.0.0 --https"
   },
   "repository": {
     "type": "git",
