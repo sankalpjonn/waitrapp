@@ -11,6 +11,7 @@ import RestaurantApp from './restaurant/components/App';
 import Login from './restaurant/components/Login';
 import LiveOrders from './restaurant/components/LiveOrders';
 import CompletedOrders from './restaurant/components/CompletedOrders';
+import Loyalty from './restaurant/components/Loyalty';
 
 export default function Routes() {
   const doLogout = () => {
@@ -29,6 +30,7 @@ export default function Routes() {
         <Route path="logout" component={Login} onEnter={doLogout} />
         <Route path="orders" component={LiveOrders} />
         <Route path="completed" component={CompletedOrders} />
+        <Route path="loyalty" component={Loyalty} />
       </Route>
     </Router>
   );

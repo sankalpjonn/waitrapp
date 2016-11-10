@@ -14,6 +14,7 @@ export default class Header extends React.Component {
     this.onBusinessChange = this.onBusinessChange.bind(this);
     this.onLiveOrdersClick = this.onLiveOrdersClick.bind(this);
     this.onCompletedOrdersClick = this.onCompletedOrdersClick.bind(this);
+    this.onLoyaltyClick = this.onLoyaltyClick.bind(this);
     this.isRouteActive = this.isRouteActive.bind(this);
   }
 
@@ -41,6 +42,10 @@ export default class Header extends React.Component {
     this.context.router.push('/business/completed');
   }
 
+  onLoyaltyClick() {
+    this.context.router.push('/business/loyalty');
+  }
+
   isRouteActive(path) {
     return !!this.context.router.isActive(path);
   }
@@ -65,6 +70,14 @@ export default class Header extends React.Component {
             onClick={this.onCompletedOrdersClick}
           >
             Completed Orders
+          </div>
+          <div
+            className={classnames('header__menu__loyalty', {
+              'header__menu--active': this.isRouteActive('/business/loyalty'),
+            })}
+            onClick={this.onLoyaltyClick}
+          >
+            Loyalty
           </div>
         </div>
         <div className="header__logout">
