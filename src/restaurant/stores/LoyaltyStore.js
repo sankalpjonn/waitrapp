@@ -58,6 +58,34 @@ AppDispatcher.register((action) => {
       break;
 
     case 'DEBIT_SUCCESS':
+      store.phoneNumber = '';
+      store.credit = '';
+      store.debit = '';
+      store.error = null;
+      LoyaltyStore.emit(CHANGE_EVENT);
+      break;
+
+    case 'DEBIT_FAILED':
+      store.phoneNumber = '';
+      store.credit = '';
+      store.debit = '';
+      store.error = action.error;
+      LoyaltyStore.emit(CHANGE_EVENT);
+      break;
+
+    case 'CREDIT_SUCCESS':
+      store.phoneNumber = '';
+      store.credit = '';
+      store.debit = '';
+      store.error = null;
+      LoyaltyStore.emit(CHANGE_EVENT);
+      break;
+
+    case 'CREDIT_FAILED':
+      store.phoneNumber = '';
+      store.credit = '';
+      store.debit = '';
+      store.error = action.error;
       LoyaltyStore.emit(CHANGE_EVENT);
       break;
 
