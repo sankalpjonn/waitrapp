@@ -15,6 +15,14 @@ export default function Live({ order }) {
     return `${hours}:${minutes} ${ampm}`;
   };
 
+  const orderItemsWithCustomizations = order.orderData.filter(item =>
+     item.hasOwnProperty('itemCustomizations')
+  );
+
+  const orderItemsWithoutCustomizations = order.orderData.filter(item =>
+    !item.hasOwnProperty('itemCustomizations')
+  );
+
   return (
     <div className="order">
       <div className="order__header">
@@ -26,17 +34,30 @@ export default function Live({ order }) {
       </div>
       <div className="order__body">
         <table className="order__body__items">
-          <tbody>
-            {
-              order.orderData.map((item, index) =>
+          {
+            orderItemsWithCustomizations.map((item, index) =>
+              <tbody>
                 <tr key={index}>
                   <td>{item.itemQuantity}</td>
                   <td>x</td>
-                  <td>{item.itemName} &lpar; {item.itemCustomizations} &rpar;</td>
+                  <td>{item.itemName}</td>
+                  <td>{item.itemCustomizations['Stick Addon']}</td>
+                  <td>{item.itemCustomizations.comments}</td>
                 </tr>
-              )
-            }
-          </tbody>
+              </tbody>
+            )
+          }
+          {
+            orderItemsWithoutCustomizations.map((item, index) =>
+              <tbody>
+                <tr key={index}>
+                  <td>{item.itemQuantity}</td>
+                  <td>x</td>
+                  <td>{item.itemName}</td>
+                </tr>
+              </tbody>
+            )
+          }
         </table>
         {
           order.comments ?
