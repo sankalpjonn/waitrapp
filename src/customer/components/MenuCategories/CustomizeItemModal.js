@@ -52,7 +52,7 @@ export default class CustomizeItemModal extends React.Component {
                 />
                 {value.name}
               </label>
-              <p>{value.price}</p>
+              <p>+` {value.price}</p>
             </div>
             ))
         }
@@ -73,7 +73,7 @@ export default class CustomizeItemModal extends React.Component {
             </div>
           </div>
           <div className="modal-card">
-            <span className="modal-card__customize-dish">Customize your dish</span>
+            <span className="modal-card__customize-dish">Please select your addon</span>
             {categories}
             <div className="form-group">
               <label>Comments</label>
