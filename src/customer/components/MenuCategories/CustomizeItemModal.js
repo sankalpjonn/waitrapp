@@ -42,15 +42,18 @@ export default class CustomizeItemModal extends React.Component {
         {
           category.customization.values.map((value) =>
             (
-            <label>
-              <input
-                type="radio"
-                name={category.category}
-                value={`${category.category}||${value.name}`}
-                onClick={this.onRadioChange}
-              />
-              {value.name}
-            </label>
+            <div className="modal-card__option-list">
+              <label>
+                <input
+                  type="radio"
+                  name={category.category}
+                  value={`${category.category}||${value.name}`}
+                  onClick={this.onRadioChange}
+                />
+                {value.name}
+              </label>
+              <p>{value.price}</p>
+            </div>
             ))
         }
       </div>
