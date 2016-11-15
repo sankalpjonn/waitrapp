@@ -95,8 +95,9 @@ CartStore.dispatchToken = AppDispatcher.register((action) => {
     case 'CART_ITEM_CUSTOMIZED':
       for (let i = 0, l = store.items.length; i < l; i++) {
         if (action.item.objectId === store.items[i].objectId) {
-          store.items[i].itemCustomizations = {};
-          Object.assign(store.items[i].itemCustomizations, action.details);
+          store.items[i].itemCustomizations = [];
+          store.items[i].itemCustomizations.push(action.details);
+          // Object.assign(store.items[i].itemCustomizations, action.details);
           break;
         }
       }
