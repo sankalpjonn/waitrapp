@@ -2,7 +2,10 @@ import React from 'react';
 import { addItem, removeItem } from './../../actions/CartActions';
 import './MenuProduct.scss';
 
-export default function QuantitySelector({ item, onQuantityIncrease, quantity }) {
+export default function QuantitySelector({ item,
+  onQuantityIncrease,
+  onQuantityDecrease,
+  quantity }) {
   const onAddItemClick = () => {
     addItem(item);
     onQuantityIncrease();
@@ -10,6 +13,7 @@ export default function QuantitySelector({ item, onQuantityIncrease, quantity })
 
   const onRemoveItemClick = () => {
     removeItem(item);
+    onQuantityDecrease();
   };
 
   return (
@@ -35,10 +39,12 @@ export default function QuantitySelector({ item, onQuantityIncrease, quantity })
 
 QuantitySelector.defaultProps = {
   onQuantityIncrease: () => {},
+  onQuantityDecrease: () => {},
 };
 
 QuantitySelector.propTypes = {
   item: React.PropTypes.object.isRequired,
   quantity: React.PropTypes.number.isRequired,
   onQuantityIncrease: React.PropTypes.func,
+  onQuantityDecrease: React.PropTypes.func,
 };

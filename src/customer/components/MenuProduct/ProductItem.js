@@ -6,9 +6,13 @@ import TodaySpecial from './../../public/images/today-special.svg';
 import VegNonVegIndicator from './../VegNonVegIndicator/';
 import Spicy from './../../public/images/spicy@2x.png';
 
-export default function ProductItem({ item, onCustomizeClick, quantity }) {
+export default function ProductItem({ item, onCustomizeClick, onRemoveCustomizeClick, quantity }) {
   const onItemAdd = () => {
     if (item.customizations) onCustomizeClick(item);
+  };
+
+  const onItemRemove = () => {
+    if (item.customizations) onRemoveCustomizeClick(item);
   };
 
   const customizable = [];
@@ -64,6 +68,7 @@ export default function ProductItem({ item, onCustomizeClick, quantity }) {
               item={item}
               quantity={quantity}
               onQuantityIncrease={onItemAdd}
+              onQuantityDecrease={onItemRemove}
             />
           </div>
         </div>
@@ -85,10 +90,12 @@ ProductItem.defaultProps = {
   item: {},
   quantity: 0,
   onCustomizeClick: () => {},
+  onRemoveCustomizeClick: () => {},
 };
 
 ProductItem.propTypes = {
   item: React.PropTypes.object,
   quantity: React.PropTypes.number,
   onCustomizeClick: React.PropTypes.func,
+  onRemoveCustomizeClick: React.PropTypes.func,
 };

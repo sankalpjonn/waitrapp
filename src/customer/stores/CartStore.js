@@ -47,6 +47,13 @@ class CartStoreClass extends EventEmitter {
   getQuantityByItemId(id) {
     return store.quantity[id];
   }
+
+  getItemCustomizationsByItemId(id) {
+    const customizations = store.items.filter((item) =>
+       item.objectId === id
+    );
+    return customizations[0].itemCustomizations;
+  }
 }
 
 // Initialize the singleton to register with the
@@ -54,6 +61,7 @@ class CartStoreClass extends EventEmitter {
 const CartStore = new CartStoreClass();
 
 CartStore.dispatchToken = AppDispatcher.register((action) => {
+  // let selectedItemObjectId;
   switch (action.actionType) {
     case 'CART_ITEM_ADDED':
       // Check if item is already present in quantities object, if not add it
@@ -94,13 +102,30 @@ CartStore.dispatchToken = AppDispatcher.register((action) => {
 
     case 'CART_ITEM_CUSTOMIZED':
       for (let i = 0, l = store.items.length; i < l; i++) {
-        if (action.item.objectId === store.items[i].objectId) {
+        if (action.item.objectId === store.items[i].objectId &&
+        !store.items[i].hasOwnProperty('itemCustomizations')) {
           store.items[i].itemCustomizations = [];
           store.items[i].itemCustomizations.push(action.details);
+          store.items[i].itemCustomizations.customizationQuantity = 1;
+          /* if (!store.items[i].hasOwnProperty('itemCustomizations')) {
+            store.items[i].itemCustomizations = [];
+            store.items[i].itemCustomizations.push(action.details);
+          } else {
+            store.items[i].itemCustomizations.push(action.details);
+          } */
           // Object.assign(store.items[i].itemCustomizations, action.details);
           break;
+        } else if (action.item.objectId === store.items[i].objectId &&
+        store.items[i].hasOwnProperty('itemCustomizations')) {
+          store.items[i].itemCustomizations.push(action.details);
         }
       }
+      // store.items[selectedItemObjectId].itemCustomizations= [];
+      // store.items[selectedItemObjectId].itemCustomizations.push(action.details);
+      CartStore.emit(CHANGE_EVENT);
+      break;
+
+    case 'REMOVE_CUSTOMIZATION':
       CartStore.emit(CHANGE_EVENT);
       break;
 

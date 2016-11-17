@@ -7,6 +7,7 @@ import { getItems } from './../../actions/MenuActions';
 import MenuStore from './../../stores/MenuStore';
 import RestaurantStore from './../../stores/RestaurantStore';
 import CustomizeItemModal from './CustomizeItemModal';
+import RemoveCustomizeModal from './RemoveCustomizeModal';
 import './MenuCategories.scss';
 
 export default class MenuCategories extends React.Component {
@@ -18,12 +19,15 @@ export default class MenuCategories extends React.Component {
       restaurant: RestaurantStore.getDetails(),
       expandedItem: -1,
       customizeModalVisibility: false,
+      removeCustomizeModalVisibility: false,
     };
 
     this.onMenuChange = this.onMenuChange.bind(this);
     this.onRestaurantChange = this.onRestaurantChange.bind(this);
     this.onCustomizeClick = this.onCustomizeClick.bind(this);
     this.onCustomizeItemModalClose = this.onCustomizeItemModalClose.bind(this);
+    this.onRemoveCustomizeClick = this.onRemoveCustomizeClick.bind(this);
+    this.onRemoveCustomizeModalClose = this.onRemoveCustomizeModalClose.bind(this);
   }
 
   componentDidMount() {
@@ -84,6 +88,19 @@ export default class MenuCategories extends React.Component {
     });
   }
 
+  onRemoveCustomizeClick(item) {
+    this.setState({
+      removeCustomizeModalVisibility: true,
+      selectedItem: item,
+    });
+  }
+
+  onRemoveCustomizeModalClose() {
+    this.setState({
+      removeCustomizeModalVisibility: false,
+    });
+  }
+
   render() {
     return (
       <div className="categories">
@@ -95,6 +112,7 @@ export default class MenuCategories extends React.Component {
                 key={index}
                 category={item}
                 onCustomizeClick={this.onCustomizeClick}
+                onRemoveCustomizeClick={this.onRemoveCustomizeClick}
                 ref={item.expanded ? 'expandedItem' : ''}
               />
               )
@@ -112,7 +130,20 @@ export default class MenuCategories extends React.Component {
             ) :
             undefined
           }
-        <PlaceOrderFooter />
+          {
+            this.state.selectedItem && this.state.selectedItem.customizations ?
+            (
+              <RemoveCustomizeModal
+                visibility={this.state.removeCustomizeModalVisibility}
+                onClose={this.onRemoveCustomizeModalClose}
+              />
+            ) :
+            undefined
+          }
+        <PlaceOrderFooter
+          visibility={this.state.RemoveCustomizeModalVisibility}
+          onClose={this.state.onRemoveCustomizeModalClose}
+        />
       </div>
     );
   }

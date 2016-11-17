@@ -21,3 +21,10 @@ export function customizeItem(item, details) {
     details,
   });
 }
+export function removeCustomization(item, details) {
+  AppDispatcher.dispatch({
+    actionType: 'REMOVE_CUSTOMIZATION',
+    item,
+    details,
+  });
+}
