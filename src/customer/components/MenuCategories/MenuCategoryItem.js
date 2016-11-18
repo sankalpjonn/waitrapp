@@ -42,7 +42,7 @@ export default class MenuCategoryItem extends React.Component {
           visibility={this.props.category.expanded}
           items={this.props.category.items}
           onCustomizeClick={this.props.onCustomizeClick}
-          onRemoveCustomizaeClick={this.props.onRemoveCustomizeClick}
+          onRemoveCustomizeClick={this.props.onRemoveCustomizeClick}
         />
       </div>
     );
@@ -51,7 +51,7 @@ export default class MenuCategoryItem extends React.Component {
 
 MenuCategoryItem.defaultProps = {
   onCustomizeClick: () => {},
-  onRemoveCustomizaeClick: () => {},
+  onRemoveCustomizeClick: () => {},
 };
 
 MenuCategoryItem.propTypes = {

@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 // import CartStore from './../../stores/CartStore';
 import { removeCustomization } from './../../actions/CartActions';
 import './MenuCategories.scss';
@@ -19,7 +20,7 @@ export default class RemoveCustomizeModal extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={classnames('remove-customize-modal', { hide: !this.props.visibility })}>
         <div className="item-name">
           <h5>Rajma Chawal</h5>
         </div>
