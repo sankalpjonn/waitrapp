@@ -140,10 +140,7 @@ export default class MenuCategories extends React.Component {
             ) :
             undefined
           }
-        <PlaceOrderFooter
-          visibility={this.state.RemoveCustomizeModalVisibility}
-          onClose={this.state.onRemoveCustomizeModalClose}
-        />
+        <PlaceOrderFooter />
       </div>
     );
   }
