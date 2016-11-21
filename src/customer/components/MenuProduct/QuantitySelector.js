@@ -1,5 +1,5 @@
 import React from 'react';
-import { addItem } from './../../actions/CartActions';
+import { addItem, removeItem } from './../../actions/CartActions';
 import './MenuProduct.scss';
 
 export default function QuantitySelector({ item,
@@ -12,6 +12,7 @@ export default function QuantitySelector({ item,
   };
 
   const onRemoveItemClick = () => {
+    removeItem(item);
     onQuantityDecrease();
   };
 

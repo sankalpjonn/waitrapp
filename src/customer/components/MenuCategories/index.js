@@ -135,6 +135,7 @@ export default class MenuCategories extends React.Component {
             (
               <RemoveCustomizeModal
                 visibility={this.state.removeCustomizeModalVisibility}
+                item={this.state.selectedItem}
                 onClose={this.onRemoveCustomizeModalClose}
               />
             ) :

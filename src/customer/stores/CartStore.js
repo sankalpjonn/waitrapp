@@ -96,7 +96,6 @@ CartStore.dispatchToken = AppDispatcher.register((action) => {
           }
         }
       }
-
       CartStore.emit(CHANGE_EVENT);
       break;
 

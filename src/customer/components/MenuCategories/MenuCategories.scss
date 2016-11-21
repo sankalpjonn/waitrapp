@@ -247,10 +247,118 @@
         text-align: right;
       }
     }
-
   }
+}
 
+.remove-customise-modal {
+  position: fixed;
+  top: 0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(#000000, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    max-width: 400px;
+    min-width: 310px;
+    border-radius: 2px;
+    box-shadow: 0px 6px 18px 0px rgba(#000, 0.5);
+
+    .modal-header {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      border-bottom: 1px solid #AFAFAF;
+
+      &__name {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        flex: 1;
+
+        &__product {
+          color: #474747;
+          font: {
+            size: 15px;
+          };
+          line-height: 1.5;
+        }
+
+        &__category,
+        &__serves {
+          color: #666560;
+          font: {
+            size: 13px;
+          }
+        }
+      }
+    }
+
+    .modal-card {
+      padding: 20px;
+
+      &__customize-dish {
+        font: {
+          size: 14px;
+        }
+        color: #666560;
+        display: block;
+      }
+
+      &__option {
+        padding: 10px 0;
+        font: {
+          size: 12px;
+        }
+        color: #666560;
+        border-top: 0.5px solid #AFAFAF;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        &:nth-child(2) {
+          border: 0;
+        }
+
+        &:nth-child() {
+          width: 50%;
+        }
+      }
+
+      &__option-list {
+        height: 1.6em;
+      }
+
+      .confirm {
+        background-color: #48ae41;
+        color: #ffffff;
+        text-transform: uppercase;
+        border: 1px solid #48ae41;
+        border-radius: 2px;
+        box-shadow: 1px 2px 1px 0px rgba(#000, 0.2);
+        min-height: 38px;
+        min-width: 128px;
+      }
+
+      .close {
+        text-transform: uppercase;
+        color: #969696;
+        background-color: #ffffff;
+      }
+
+      &__button {
+        text-align: right;
+      }
+    }
+  }
 }
 
 .fa-circle {
