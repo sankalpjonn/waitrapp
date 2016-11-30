@@ -21,10 +21,9 @@ export function customizeItem(item, details) {
     details,
   });
 }
-export function removeCustomization(item, details) {
+export function removeCustomization(item) {
   AppDispatcher.dispatch({
     actionType: 'REMOVE_CUSTOMIZATION',
     item,
-    details,
   });
 }
