@@ -13,6 +13,7 @@ export default class Header extends React.Component {
 
     this.onBusinessChange = this.onBusinessChange.bind(this);
     this.onLiveOrdersClick = this.onLiveOrdersClick.bind(this);
+    this.onBillOrdersClick = this.onBillOrdersClick.bind(this);
     this.onCompletedOrdersClick = this.onCompletedOrdersClick.bind(this);
     this.isRouteActive = this.isRouteActive.bind(this);
   }
@@ -37,6 +38,10 @@ export default class Header extends React.Component {
     this.context.router.push('/business/orders');
   }
 
+  onBillOrdersClick() {
+    this.context.router.push('business/bills');
+  }
+
   onCompletedOrdersClick() {
     this.context.router.push('/business/completed');
   }
@@ -57,6 +62,14 @@ export default class Header extends React.Component {
             onClick={this.onLiveOrdersClick}
           >
             Live Orders
+          </div>
+          <div
+            className={classnames('header__menu__bill-orders', {
+              'header__menu--active': this.isRouteActive('/business/bills'),
+            })}
+            onClick={this.onBillOrdersClick}
+          >
+            Bill Orders
           </div>
           <div
             className={classnames('header__menu__completed-orders', {

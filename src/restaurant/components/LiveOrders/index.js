@@ -59,6 +59,7 @@ export default class LiveOrders extends React.Component {
               }
             </div>
           </div>
+          {/*
           <div className="live-orders__bill-requested">
             <h6 className="live-orders__bill-requested__head">Bill Requested</h6>
             <div className="live-orders__bill-requested__contain">
@@ -73,6 +74,7 @@ export default class LiveOrders extends React.Component {
               }
             </div>
           </div>
+          */}
         </div>
       </div>
     );

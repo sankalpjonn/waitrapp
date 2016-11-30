@@ -10,6 +10,7 @@ import OrderDetails from './customer/components/OrderDetails';
 import RestaurantApp from './restaurant/components/App';
 import Login from './restaurant/components/Login';
 import LiveOrders from './restaurant/components/LiveOrders';
+import BillOrders from './restaurant/components/BillOrders';
 import CompletedOrders from './restaurant/components/CompletedOrders';
 
 export default function Routes() {
@@ -28,6 +29,7 @@ export default function Routes() {
         <Route path="login" component={Login} />
         <Route path="logout" component={Login} onEnter={doLogout} />
         <Route path="orders" component={LiveOrders} />
+        <Route path="bills" coponent={BillOrders} />
         <Route path="completed" component={CompletedOrders} />
       </Route>
     </Router>
