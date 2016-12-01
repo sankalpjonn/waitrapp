@@ -39,7 +39,7 @@ export default class Header extends React.Component {
   }
 
   onBillOrdersClick() {
-    this.context.router.push('business/bills');
+    this.context.router.push('/business/bills');
   }
 
   onCompletedOrdersClick() {
@@ -53,6 +53,41 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className="header">
+        <div className="header__top">
+          <div className="header__top__logo">
+            <h4>{this.state.business.name}</h4>
+          </div>
+          <div className="header__top__logout">
+            <Link to="/business/Logout">Logout</Link>
+          </div>
+        </div>
+        <div className="header__menu">
+          <div
+            className={classnames('header__menu__live-orders', {
+              'header__menu--active': this.isRouteActive('/business/orders'),
+            })}
+            onClick={this.onLiveOrdersClick}
+          >
+            New
+          </div>
+          <div
+            className={classnames('header__menu__bill-orders', {
+              'header__menu--active': this.isRouteActive('/business/bills'),
+            })}
+            onClick={this.onBillOrdersClick}
+          >
+            Bills
+          </div>
+          <div
+            className={classnames('header__menu__completed-orders', {
+              'header__menu--active': this.isRouteActive('/business/completed'),
+            })}
+            onClick={this.onCompletedOrdersClick}
+          >
+            Completed
+          </div>
+        </div>
+        {/*
         <h4 className="header__logo">{this.state.business.name}</h4>
         <div className="header__menu">
           <div
@@ -83,6 +118,7 @@ export default class Header extends React.Component {
         <div className="header__logout">
           <Link to="/business/logout">Logout</Link>
         </div>
+        */}
       </header>
     );
   }

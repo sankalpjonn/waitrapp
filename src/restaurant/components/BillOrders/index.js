@@ -5,14 +5,13 @@ import Live from './../Orders/Live.js';
 import OrderStore from './../../stores/OrderStore';
 import { getPendingOrders } from './../../actions/OrdersActions';
 import { Config } from './../../../config';
+import './BillOrders.scss';
 
 export default class BillOrders extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      billRequestedOrders: OrderStore.getBillRequestedOrders(),
-    };
+    this.state = { billRequestedOrders: OrderStore.getBillRequestedOrders() };
 
     this.onOrdersChange = this.onOrdersChange.bind(this);
   }

@@ -13,7 +13,7 @@ export default class LiveOrders extends React.Component {
 
     this.state = {
       newOrders: OrderStore.getReceivedOrders().concat(OrderStore.getProcessingOrders()),
-      billRequestedOrders: OrderStore.getBillRequestedOrders(),
+      // billRequestedOrders: OrderStore.getBillRequestedOrders(),
     };
 
     this.onOrdersChange = this.onOrdersChange.bind(this);
@@ -38,7 +38,7 @@ export default class LiveOrders extends React.Component {
   onOrdersChange() {
     this.setState({
       newOrders: OrderStore.getReceivedOrders().concat(OrderStore.getProcessingOrders()),
-      billRequestedOrders: OrderStore.getBillRequestedOrders(),
+      // billRequestedOrders: OrderStore.getBillRequestedOrders(),
     });
   }
 
@@ -48,7 +48,6 @@ export default class LiveOrders extends React.Component {
         <Header />
         <div className="live-orders">
           <div className="live-orders__new-orders">
-            <h6 className="live-orders__new-orders__head">New Orders</h6>
             <div className="live-orders__new-orders__contain">
               {
                 this.state.newOrders.length > 0 ?
