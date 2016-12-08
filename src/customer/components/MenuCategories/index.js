@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MenuCategoryItem from './MenuCategoryItem';
-import PlaceOrderFooter from './PlaceOrderFooter';
+import MenuProduct from './../MenuProduct/';
+// import PlaceOrderFooter from './PlaceOrderFooter';
 import Header from './../Header/';
 import { getItems } from './../../actions/MenuActions';
 import MenuStore from './../../stores/MenuStore';
@@ -17,7 +18,7 @@ export default class MenuCategories extends React.Component {
     this.state = {
       categories: MenuStore.getCategoriesList(),
       restaurant: RestaurantStore.getDetails(),
-      expandedItem: -1,
+      expandedItem: 0,
       customizeModalVisibility: false,
       removeCustomizeModalVisibility: false,
     };
@@ -56,7 +57,7 @@ export default class MenuCategories extends React.Component {
 
   onMenuChange() {
     const categories = MenuStore.getCategoriesList();
-    let expandedItem = -1;
+    let expandedItem = 0;
     for (let i = 0, l = categories.length; i < l; i++) {
       if (categories[i].expanded) {
         expandedItem = i;
@@ -119,6 +120,20 @@ export default class MenuCategories extends React.Component {
             )
           }
         </div>
+        <div className="categories__content">
+          {
+            this.state.categories.map((item, index) => (
+              <MenuProduct
+                key={index}
+                visibility={item.expanded}
+                items={item.items}
+                onCustomizeClick={this.onCustomizeClick}
+                onRemoveCustomizeClick={this.onRemoveCustomizeClick}
+              />
+              )
+            )
+          }
+        </div>
           {
             this.state.selectedItem && this.state.selectedItem.customizations ?
             (
@@ -141,7 +156,7 @@ export default class MenuCategories extends React.Component {
             ) :
             undefined
           }
-        <PlaceOrderFooter />
+        {/* <PlaceOrderFooter /> */}
       </div>
     );
   }

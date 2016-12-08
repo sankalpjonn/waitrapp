@@ -1,21 +1,23 @@
 import React from 'react';
-import { addItem, removeItem } from './../../actions/CartActions';
+import { addItem } from './../../actions/CartActions';
+// import { addItem, removeItem } from './../../actions/CartActions';
 import './MenuProduct.scss';
 
 export default function QuantitySelector({ item,
-  onQuantityIncrease,
-  onQuantityDecrease,
-  quantity }) {
+  onQuantityIncrease }) {
+  // onQuantityDecrease,
+  // quantity }) {
   const onAddItemClick = () => {
     addItem(item);
     onQuantityIncrease();
   };
-
+/*
   const onRemoveItemClick = () => {
     removeItem(item);
     onQuantityDecrease();
   };
-
+*/
+  /*
   return (
     <div className="quantity-selector">
       {
@@ -33,6 +35,12 @@ export default function QuantitySelector({ item,
         undefined
       }
       <div className="quantity-selector__add" onClick={onAddItemClick}><span>+</span></div>
+    </div>
+  );
+  */
+  return (
+    <div className="quantity-selector">
+      <button type="button" className="close" onClick={onAddItemClick}>View</button>
     </div>
   );
 }

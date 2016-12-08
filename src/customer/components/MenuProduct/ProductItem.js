@@ -6,10 +6,12 @@ import TodaySpecial from './../../public/images/today-special.svg';
 import VegNonVegIndicator from './../VegNonVegIndicator/';
 import Spicy from './../../public/images/spicy@2x.png';
 
-export default function ProductItem({ item, onCustomizeClick, onRemoveCustomizeClick, quantity }) {
+export default function ProductItem(
+    { item, onCustomizeClick, onRemoveCustomizeClick, quantity }) {
   const onItemAdd = () => {
     if (item.customizations) onCustomizeClick(item);
   };
+
 
   const onItemRemove = () => {
     if (item.customizations) onRemoveCustomizeClick(item);

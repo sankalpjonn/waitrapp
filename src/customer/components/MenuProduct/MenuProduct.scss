@@ -92,7 +92,17 @@
   }
 }
 
-
+  .close {
+  //background-color: #FFFF66;
+  border: 2px solid #FFFF66;
+  border-radius: 2px;
+  box-shadow: 1px 2px 1px 0px rgba(#000, 0.2);
+  text-transform: uppercase;
+  min-height: 25px;
+  min-width: 62px;
+  color: #FFFF66;
+  background-color: #ffffff;
+}
 
 .quantity-selector {
   display: flex;

@@ -31,7 +31,7 @@ export default class Header extends React.Component {
     return (
       <div className="header-div">
         <h3>{this.state.restaurant.name}</h3>
-        <p>{this.state.restaurant.description}</p>
+        {/* <p>{this.state.restaurant.description}</p> */}
       </div>
     );
   }

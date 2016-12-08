@@ -44,12 +44,14 @@ export default class CustomizeItemModal extends React.Component {
             (
             <div className="modal-card__option-list">
               <label>
-                <input
-                  type="radio"
-                  name={category.category}
-                  value={`${category.category}||${value.name}`}
-                  onClick={this.onRadioChange}
-                />
+                {/*
+                  <input
+                    type="radio"
+                    name={category.category}
+                    value={`${category.category}||${value.name}`}
+                    onClick={this.onRadioChange}
+                  />
+                */}
                 {value.name}
               </label>
               <p>+` {value.price}</p>
@@ -75,18 +77,22 @@ export default class CustomizeItemModal extends React.Component {
           <div className="modal-card">
             <span className="modal-card__customize-dish">Please select your addon</span>
             {categories}
-            <div className="form-group">
-              <label>Comments</label>
-              <textarea
-                placeholder="Ex. Less Spicy, Extra Mayoneese etc."
-                ref={ref => { this.comments = ref; }}
-              ></textarea>
-            </div>
+            {/*
+              <div className="form-group">
+                <label>Comments</label>
+                <textarea
+                  placeholder="Ex. Less Spicy, Extra Mayoneese etc."
+                  ref={ref => { this.comments = ref; }}
+                ></textarea>
+              </div>
+            */}
             <div className="modal-card__button">
               <button type="button" className="close" onClick={this.props.onClose}>Close</button>
-              <button type="submit" className="confirm" onClick={this.onCustomizeConfirm}>
-                Add
-              </button>
+              {/*
+                <button type="submit" className="confirm" onClick={this.onCustomizeConfirm}>
+                  Add
+                </button>
+              */}
             </div>
           </div>
         </div>
