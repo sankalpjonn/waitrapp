@@ -2,7 +2,7 @@ import React from 'react';
 import { setRestaurant } from './../../actions/AppActions';
 import { getDetails } from './../../actions/RestaurantActions';
 import RestaurantStore from './../../stores/RestaurantStore';
-import BgImg from './../../public/images/bg.jpg';
+// import BgImg from './../../public/images/bg.jpg';
 import './app.scss';
 
 export default function App({ children, params }) {
@@ -14,7 +14,7 @@ export default function App({ children, params }) {
   if (!restaurantDetails.objectId) getDetails();
 
   return (
-    <div className="customer-app" style={{ backgroundImage: `url(${BgImg})` }}>
+    <div className="customer-app">
       {children}
     </div>
   );

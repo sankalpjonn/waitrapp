@@ -16,7 +16,6 @@
   }
 
   .category-item {
-    border-bottom: 1px solid #AFAFAF;
 
     &--expanded {
       font-weight: bold;
@@ -32,14 +31,14 @@
       align-items: center;
       background-color: #ffffff;
       padding: 25px 10px;
-      border-bottom: 2px solid #AFAFAF;
+      border-bottom: 4px solid #ffffff;
       color: #474747;
       font: {
         size: 12px;
       };
 
       &--expanded {
-        border-bottom: 2px solid #FFFF66;
+        border-bottom: 4px solid #f2eb4b;
       }
 
       .chevron {
@@ -54,7 +53,7 @@
   }
 
   &__content {
-    top: -51px;
+    top: -45px;
     position: relative;
     height: 100%;
   }
@@ -258,14 +257,14 @@
 
       .close {
         //background-color: #FFFF66;
-        border: 1px solid #FFFF66;
+        border: 1px solid #f2eb4b;
         border-radius: 2px;
         box-shadow: 1px 2px 1px 0px rgba(#000, 0.2);
         text-transform: uppercase;
         min-height: 38px;
         min-width: 128px;
-        color: #FFFF66;
-        background-color: #ffffff;
+        color: #161516;
+        background-color: #f2eb4b;
       }
 
       &__button {
